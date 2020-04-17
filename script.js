@@ -1,7 +1,12 @@
 var charNum = '>=8, <=128';
-var lowerBtn = 'abcdefghijklmnopqrstuvwxyz';
-var upperBtn = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-var symBtn = '!@#$%^&*()';
+var lowerCase = 'abcdefghijklmnopqrstuvwxyz';
+var uppeCase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+var number = '0123456789';
+var symbol = '!@#$%^&*()';
+
+function mix() { }
+console.log(mix(10, [lowerCase, upperCase, number, symbol]));
+
 
 var charNum = document.getElementById('charNum');
 var lower = document.getElementById('lowerBtn');
