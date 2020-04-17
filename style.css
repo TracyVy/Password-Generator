@@ -58,9 +58,16 @@ header {
   display: inline;
 }
 
+#charNum {
+  border: 1px;
+  border-color: #000000;
+}
+
 .checkList {
   display: inline;
 }
+
+
 
 .card-footer {
   text-align: center;
@@ -105,7 +112,7 @@ button[disabled] {
   float: right;
 }
 
-#password {
+#txtPassword {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;

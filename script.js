@@ -4,8 +4,25 @@ var uppeCase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 var number = '0123456789';
 var symbol = '!@#$%^&*()';
 
-function mix() { }
-console.log(mix(10, [lowerCase, upperCase, number, symbol]));
+btnGenerate.addEventListener("click", (e) => {
+  //e.();
+})
+
+lowerBtn.addEventListener("click", (e) => {
+  console.log("Lower Case checked");
+})
+
+upperBtn.addEventListener("click", (e) => {
+  console.log("Upper Case checked");
+})
+
+numBtn.addEventListener("click", (e) => {
+  console.log("Number button checked");
+})
+
+symBtn.addEventListener("click", (e) => {
+  console.log("Special CHaracters checked");
+})
 
 
 var charNum = document.getElementById('charNum');

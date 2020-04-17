@@ -15,6 +15,7 @@
       <h1>Password Generator</h1>
     </header>
     <div class="card">
+
       <div class="card-header">
         <h2>Generate a Password</h2>
       </div>
@@ -22,18 +23,21 @@
       <div class="inputChar">How long do you want your password to be?</div>
       <input id="charNum" type="text" placeholder="Enter 8 - 128" />
       </br>
-      <!-- Password checklist -->
+      <!-- Password checkbox -->
       <div class="checkList">Please check what you want to include.</div>
-      <input id="lowerBtn" type="submit" value="Lower Case" />
-      <input id="upperBtn" type="submit" value="Upper Case" />
-      <input id="numBtn" type="submit" value="Numbers" />
-      <input id="specBtn" type="submit" value="Special Characters" />
+      <div>
+        <span><input id="lowerBtn" type="checkbox" />&#160;Lower case</span>
+        <span><input id="upperBtn" type="checkbox" />&#160;Upper case</span>
+        <span><input id="numBtn" type="checkbox" />&#160;Numbers</span>
+        <span><input id="symBtn" type="checkbox" />&#160;Special Characters</span>
+      </div>
       <!-- Password Display -->
       <div class="card-body">
-        <textarea readonly id="password" placeholder="Your Secure Password" aria-label="Generated Password"></textarea>
+        <textarea readonly id="txtPassword" placeholder="Your Secure Password"
+          aria-label="Generated Password"></textarea>
       </div>
       <div class="card-footer">
-        <button id="generate" class="btn">Generate Password</button>
+        <button id="btnGenerate" class="btn">Generate Password</button>
       </div>
     </div>
   </div>
