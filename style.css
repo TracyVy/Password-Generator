@@ -54,6 +54,14 @@ header {
   min-height: 100px;
 }
 
+.inputChar {
+  display: inline;
+}
+
+.checkList {
+  display: inline;
+}
+
 .card-footer {
   text-align: center;
 }
