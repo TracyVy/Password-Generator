@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Password Generator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <header>
+      <h1>Password Generator</h1>
+    </header>
+    <div class="card">
+      <div class="card-header">
+        <h2>Generate a Password</h2>
+      </div>
+      <!-- Password length prompt -->
+      <div class="inputChar">How long do you want your password to be?</div>
+      <input id="lengthInPut" type="text" placeholder="Enter 8 - 128" />
+      <!-- Password checklist -->
+      <div class="checkList">Please check what you want to include</div>
+      <input id="lowerBtn" type="submit" value="Lower Case" />
+      <input id="upperBtn" type="submit" value="Upper Case" />
+      <input id="numBtn" type="submit" value="Numbers" />
+      <input id="specBtn" type="submit" value="Special Characters" />
+      <div class="card-body">
+        <textarea readonly id="password" placeholder="Your Secure Password" aria-label="Generated Password"></textarea>
+      </div>
+      <div class="card-footer">
+        <button id="generate" class="btn">Generate Password</button>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
