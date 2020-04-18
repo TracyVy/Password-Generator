@@ -1,17 +1,8 @@
-// var lengthInput = "";
-// var lowerCase = 'abcdefghijklmnopqrstuvwxyz';
-// var uppeCase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-// var number = '0123456789';
-// var symbol = '!@#$%^&*()';
-
-// function askQuestions() {
-//   var text;
-//   if (confirm("Click one)) {
-//     text = "Great, let's begin!";
-// } else {
-//   text = "Okay, I will see you next time you need one.";
-// }
-// };
+var lengthInput = '>=8, <=128';
+var lowerCase = 'abcdefghijklmnopqrstuvwxyz';
+var uppeCase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+var number = '0123456789';
+var symbol = '!@#$%^&*()';
 
 function yesFunction() {
   var checkbox = document.getElementById("yesNew");
@@ -22,4 +13,15 @@ function yesFunction() {
   } else {
     text.style.display = "none";
   }
-}
+};
+
+function validLength() {
+  var x = document.getElementById('lengthInput');
+
+  if (x >= 8 && x <= 128) {
+    alert("Great!");
+  } else {
+    alert("Please enter a number between 8 & 128");
+  }
+};
+
