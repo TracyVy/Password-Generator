@@ -4,31 +4,33 @@ var textInputLength = document.getElementById('lengthInput');
 
 textInputLength.addEventListener('keyup', validLength);
 
+// Do you want a new password?
 function yesFunction() {
   var checkbox = document.getElementById("yesNew");
-  var text = document.getElementById("yesText");
+  var text = document.getElementById("passwordForm");
 
   if (checkbox.checked == true) {
-    text.style.display = "block";
+    //text.style.display = "block";
+    text.style.visibility = 'visible';
   } else {
-    text.style.display = "none";
+    //text.style.display = "none";
+    text.style.visibility = 'hidden';
   }
 };
 
+// Validate password length
 function validLength(e) {
   e.preventDefault();
   if (e.keyCode === 13) {
     x = document.getElementById('lengthInput').value;
 
-    if (x >= 8 && x <= 128) {
-      alert("Great!");
-    } else {
+    if (x < 8 || x > 128) {
       alert("Please enter a number between 8 & 128");
     }
   }
 };
 
-// Random generator functions
+// Random functions
 function randomLower() {
   const lower = 'abcdefghijklmnopqrstuvwxyz';
   return lower[Math.floor(Math.random() * lower.length)];
@@ -49,11 +51,16 @@ function randomSym() {
   return sym[Math.floor(Math.random() * sym.length)];
 }
 
-
+// Generate functions
 var btnGenerate = document.getElementById("btnGenerate");
 btnGenerate.addEventListener("click", generateNew);
 
 function generateNew() {
+  // Validate password length
+  if (x < 8 || x > 128) {
+    alert("Please enter a number between 8 & 128");
+    return;
+  }
 
   var lowerCheck = document.getElementById("lowerBtn");
   var upperCheck = document.getElementById("upperBtn");
@@ -62,22 +69,18 @@ function generateNew() {
 
   if (lowerCheck.checked == true) {
     newPasswordVal = randomLower();
-    //console.log('newPasswordVal=' + newPasswordVal);
   }
 
   if (upperCheck.checked == true) {
     newPasswordVal += randomUpper();
-    // console.log('newPasswordVal=' + newPasswordVal);
   }
 
   if (numCheck.checked == true) {
     newPasswordVal += randomNum();
-    // console.log('newPasswordVal=' + newPasswordVal);
   }
 
   if (symCheck.checked == true) {
     newPasswordVal += randomSym();
-    // console.log('newPasswordVal=' + newPasswordVal);
   }
 
   for (var i = newPasswordVal.length; i < x; i++) {
@@ -86,5 +89,6 @@ function generateNew() {
 
   console.log('newPasswordVal=' + newPasswordVal);
 
-}
+  document.getElementById('txtPassword').value = newPasswordVal;
 
+}

@@ -11,20 +11,23 @@
 
 <body>
   <div class="wrapper">
+
     <header>
       <h1>Password Generator</h1>
     </header>
+
     <div class="card">
-      <form>
-        <!-- Yes/No checkbox -->
-        <span>Would you like a new password? <input id="yesNew" type="checkbox" onclick="yesFunction()" />Yes</span>
-        </br>
-        <p id="yesText" style="display:none; color:red">Ok, Let's begin by answering the following questions.</p>
+      <!-- Yes/No checkbox -->
+      <span>Would you like a new password? <input id="yesNew" type="checkbox" onclick="yesFunction()" />Yes</span>
+      </br>
+
+      <div id="passwordForm">
+        <p id="yesText" style="color:red">Ok, Let's begin by answering the following questions.</p>
         <!-- PW length -->
         <div class="length">How long do you want your password to be?</div>
         <input id="lengthInput" type="text" placeholder="Enter 8 - 128"></input>
-        <input type="text" placeholder="" style="visibility:hidden" />
         <br />
+
         <!-- PW criteria checkboxes -->
         <div class="checkList">Please check what you want to include.</div>
         <div>
@@ -33,15 +36,18 @@
           <span><input id="numBtn" type="checkbox" />&#160;Numbers</span>
           <span><input id="symBtn" type="checkbox" />&#160;Special Characters</span>
         </div>
-      </form>
-      <!-- PW Generate btn -->
-      <div class="card-body">
-        <button id="btnGenerate" class="btn">Generate Password</button>
-      </div>
-      <!-- PW Display -->
-      <div class="card-footer">
-        <textarea readonly id="txtPassword" placeholder="Your Secure Password"
-          aria-label="Generated Password"></textarea>
+
+        <!-- PW Generate btn -->
+        <div class="card-body">
+          <button id="btnGenerate" class="btn">Generate Password</button>
+        </div>
+
+        <!-- PW Display -->
+        <div class="card-footer">
+          <textarea readonly id="txtPassword" placeholder="Your Secure Password" aria-label="Generated Password">
+          </textarea>
+        </div>
+
       </div>
 
     </div>

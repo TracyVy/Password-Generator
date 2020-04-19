@@ -54,6 +54,10 @@ form {
   line-height: 25px;
 }
 
+#passwordForm { 
+  visibility: hidden; 
+}
+
 .card-body {
   text-align: center;
 }
@@ -122,7 +126,7 @@ button[disabled] {
   padding-right: 15px;
   padding-bottom: 85px;
   font-size: 1.2rem;
-  text-align: center;
+  /* text-align: center; */
   margin-top: 10px;
   margin-bottom: 10px;
   border: 2px dashed #c0c7cf;
