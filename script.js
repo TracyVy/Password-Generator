@@ -35,25 +35,21 @@ form.addEventListener("submit", (e) => {
   passwordDisplay.innerText = password;
 });
 
-// Random functions
-function randomLower() {
-  const lower = "abcdefghijklmnopqrstuvwxyz";
-  return lower[Math.floor(Math.random() * lower.length)];
-}
+// Identifying arrays in CharCode tables. Use concatination.
+const lowerCharCodes = arrayChar(97, 122);
+const upperCharCodes = arrayChar(65, 90);
+const numCharCodes = arrayChar(48, 57);
+const symCharCodes = arrayChar(33, 47)
+  .concat(arrayChar(58, 64))
+  .concat(arrayChar(91, 96))
+  .concat(arrayChar(123, 126));
 
-function randomUpper() {
-  const upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  return upper[Math.floor(Math.random() * upper.length)];
-}
-
-function randomNum() {
-  const num = "0123456789";
-  return num[Math.floor(Math.random() * num.length)];
-}
-
-function randomSym() {
-  const sym = "~!@#$%^&*()-+";
-  return sym[Math.floor(Math.random() * sym.length)];
+function arrayChar(low, high) {
+  const array = [];
+  for (let i = low; i <= high; i++) {
+    array.push(i);
+  }
+  return array;
 }
 
 // Generate functions
