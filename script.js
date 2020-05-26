@@ -52,55 +52,18 @@ function arrayChar(low, high) {
   return array;
 }
 
-// Generate functions
-var btnGenerate = document.getElementById("btnGenerate");
-btnGenerate.addEventListener("click", generateNew);
-
-function generateNew() {
-  x = textInputLength.value;
-  console.log("input length = " + x);
-
-  // Validate password length
-  if (x < 8 || x > 128) {
-    alert("Please enter a number between 8 & 128");
-    return;
+// Generate password function with join and concat
+function generatePassword(charAmount, yesLower, yesUpper, yesNum, yesSym) {
+  let charCodes = lowercaseCharCodes;
+  if (yesLower) charCodes = charCodes.concat(lowerCharCodes);
+  if (yesUpper) charCodes = charCodes.concat(upperCharCodes);
+  if (yesNum) charCodes = charCodes.concat(numCharCodes);
+  if (yesSym) charCodes = charCodes.concat(symCharCodes);
+  const passwordCharacters = [];
+  for (let i = 0; i < charAmount; i++) {
+    const characterCode =
+      charCodes[Math.floor(Math.random() * charCodes.length)];
+    passwordCharacters.push(String.fromCharCode(characterCode));
   }
-
-  var lowerCheck = document.getElementById("lowerBox");
-  var upperCheck = document.getElementById("upperBox");
-  var numCheck = document.getElementById("numBox");
-  var symCheck = document.getElementById("symBox");
-
-  var newPasswordVal = "";
-  if (lowerCheck.checked == true) {
-    console.log("lowerCheck.checked...");
-    //var newPasswordVal = "";
-    newPasswordVal += randomLower();
-  }
-
-  if (upperCheck.checked == true) {
-    console.log("upperCheck.checked...");
-    //var newPasswordVal = "";
-    newPasswordVal += randomUpper();
-  }
-
-  if (numCheck.checked == true) {
-    console.log("numCheck.checked...");
-    //var newPasswordVal = "";
-    newPasswordVal += randomNum();
-  }
-
-  if (symCheck.checked == true) {
-    console.log(symCheck);
-    //var newPasswordVal = "";
-    newPasswordVal += randomSym();
-  }
-
-  for (var i = newPasswordVal.length; i < x; i++) {
-    newPasswordVal += randomUpper();
-  }
-
-  console.log("newPasswordVal=" + newPasswordVal);
-
-  document.getElementById("txtPassword").value = newPasswordVal;
+  return passwordCharacters.join("");
 }
