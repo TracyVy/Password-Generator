@@ -7,17 +7,29 @@ var textInputLength = document.getElementById("lengthInput");
 charAmountRange.addEventListener("input", syncCharacterAmount);
 charAmountNum.addEventListener("input", syncCharacterAmount);
 
-// Validate password length
-function validLength(e) {
-  e.preventDefault();
-  if (e.keyCode === 13) {
-    x = document.getElementById("lengthInput").value;
-
-    if (x < 8 || x > 128) {
-      alert("Please enter a number between 8 & 128");
-    }
-  }
+function syncCharacterAmount(e) {
+  const value = e.target.value;
+  charAmountNum.value = value;
+  charAmountRange.value = value;
 }
+
+// Validate checkbox values
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const charAmount = charAmountNum.value;
+  const yesUpper = upperBox.checked;
+  const yesLower = lowerBox.checked;
+  const yesNum = numBox.checked;
+  const yesSym = symBox.checked;
+  const password = generatePassword(
+    charAmount,
+    yesUpper,
+    yesLower,
+    yesNum,
+    yesSym
+  );
+  passwordDisplay.innerText = password;
+});
 
 // Random functions
 function randomLower() {
