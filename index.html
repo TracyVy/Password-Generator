@@ -9,67 +9,65 @@
   </head>
 
   <body>
-    <div class="wrapper">
-      <header>
-        <h1>Password Generator</h1>
-      </header>
+    <header>
+      <h1>Password Generator</h1>
+    </header>
 
-      <div class="card">
-        <div id="passwordForm">
-          <!-- PW length -->
-          <label for="charAmountNum">Number of Characters</label>
-          <div class="charAmountBox">
-            <input
-              type="range"
-              min="8"
-              max="128"
-              value="10"
-              id="charAmountRange"
-            />
-            <input
-              class="numInput"
-              type="number"
-              min="8"
-              max="128"
-              value="10"
-              id="charAmountNum"
-            />
-          </div>
-
-          <!-- PW criteria checkboxes -->
-          <div class="checkList">Please check what you want to include.</div>
-          <div>
-            <span><input id="lowerBox" type="checkbox" />&#160;Lower case</span>
-            <br />
-            <span><input id="upperBox" type="checkbox" />&#160;Upper case</span>
-            <br />
-            <span><input id="numBox" type="checkbox" />&#160;Numbers</span>
-            <br />
-            <span
-              ><input id="symBox" type="checkbox" />&#160;Special
-              Characters</span
-            >
-            <br />
-          </div>
-
-          <!-- PW Generate btn -->
-          <div class="card-body">
-            <button id="btnGenerate" class="btn">Generate Password</button>
-          </div>
-
-          <!-- PW Display -->
-          <div class="card-footer">
-            <textarea
-              readonly
-              id="txtPassword"
-              placeholder="Your Secure Password"
-              aria-label="Generated Password"
-            >
-            </textarea>
-          </div>
+    <div class="card">
+      <form id="passwordForm" class="form">
+        <!-- PW length -->
+        <label for="charAmountNum">Number of Characters</label>
+        <div class="charAmountBox">
+          <input
+            type="range"
+            min="8"
+            max="128"
+            value="10"
+            id="charAmountRange"
+          />
+          <input
+            class="numInput"
+            type="number"
+            min="8"
+            max="128"
+            value="10"
+            id="charAmountNum"
+          />
         </div>
-      </div>
+
+        <!-- PW criteria checkboxes -->
+        <div class="checkList">Please check what you want to include.</div>
+        <div>
+          <span><input id="lowerBox" type="checkbox" />&#160;Lower case</span>
+          <br />
+          <span><input id="upperBox" type="checkbox" />&#160;Upper case</span>
+          <br />
+          <span><input id="numBox" type="checkbox" />&#160;Numbers</span>
+          <br />
+          <span
+            ><input id="symBox" type="checkbox" />&#160;Special Characters</span
+          >
+          <br />
+        </div>
+
+        <!-- PW Generate btn -->
+        <div class="card-body">
+          <button id="btnGenerate" class="btn">Generate Password</button>
+        </div>
+
+        <!-- PW Display -->
+        <div class="card-footer">
+          <textarea
+            readonly
+            id="txtPassword"
+            placeholder="Your Secure Password"
+            aria-label="Generated Password"
+          >
+          </textarea>
+        </div>
+      </form>
     </div>
+
     <script src="script.js"></script>
   </body>
 </html>
