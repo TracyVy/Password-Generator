@@ -1,7 +1,6 @@
 const form = document.getElementById("passwordForm");
 const charAmountRange = document.getElementById("charAmountRange");
 const charAmountNum = document.getElementById("charAmountNum");
-const lowerBoxEl = document.getElementById("lowerBox");
 const upperBoxEl = document.getElementById("upperBox");
 const numBoxEl = document.getElementById("numBox");
 const symBoxEl = document.getElementById("symBox");
@@ -21,17 +20,10 @@ function syncCharacterAmount(e) {
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   const charAmount = charAmountNum.value;
-  const yesLower = lowerBoxEl.checked;
   const yesUpper = upperBoxEl.checked;
   const yesNum = numBoxEl.checked;
   const yesSym = symBoxEl.checked;
-  const password = generatePassword(
-    charAmount,
-    yesUpper,
-    yesLower,
-    yesNum,
-    yesSym
-  );
+  const password = generatePassword(charAmount, yesUpper, yesNum, yesSym);
   passwordDisplay.innerText = password;
 });
 
@@ -52,10 +44,9 @@ function arrayChar(low, high) {
   return array;
 }
 
-// Generate password function with join and concat
-function generatePassword(charAmount, yesLower, yesUpper, yesNum, yesSym) {
-  let charCodes = lowercaseCharCodes;
-  if (yesLower) charCodes = charCodes.concat(lowerCharCodes);
+// Generate password function with join and concat. Lowercase default.
+function generatePassword(charAmount, yesUpper, yesNum, yesSym) {
+  let charCodes = lowerCharCodes;
   if (yesUpper) charCodes = charCodes.concat(upperCharCodes);
   if (yesNum) charCodes = charCodes.concat(numCharCodes);
   if (yesSym) charCodes = charCodes.concat(symCharCodes);
