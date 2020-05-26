@@ -1,7 +1,10 @@
+const form = document.getElementById("passwordForm");
 const charAmountRange = document.getElementById("charAmountRange");
 const charAmountNum = document.getElementById("charAmountNum");
-var newPasswordVal = "";
-var textInputLength = document.getElementById("lengthInput");
+const lowerBoxEl = document.getElementById("lowerBox");
+const upperBoxEl = document.getElementById("upperBox");
+const numBoxEl = document.getElementById("numBox");
+const symBoxEl = document.getElementById("symBox");
 
 //Sync slider and numBox
 charAmountRange.addEventListener("input", syncCharacterAmount);
@@ -17,10 +20,10 @@ function syncCharacterAmount(e) {
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   const charAmount = charAmountNum.value;
-  const yesUpper = upperBox.checked;
-  const yesLower = lowerBox.checked;
-  const yesNum = numBox.checked;
-  const yesSym = symBox.checked;
+  const yesLower = lowerBoxEl.checked;
+  const yesUpper = upperBoxEl.checked;
+  const yesNum = numBoxEl.checked;
+  const yesSym = symBoxEl.checked;
   const password = generatePassword(
     charAmount,
     yesUpper,
