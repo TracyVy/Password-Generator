@@ -9,15 +9,12 @@
   </head>
 
   <body>
-    <header>
+    <div class="container">
       <h1>Password Generator</h1>
-    </header>
-
-    <div class="card">
       <form id="passwordForm" class="form">
         <!-- PW length -->
-        <label for="charAmountNum">Number of Characters</label>
-        <div class="charAmountBox">
+        <label for="charAmountNum">Password Length</label>
+        <div>
           <input
             type="range"
             min="8"
@@ -26,7 +23,6 @@
             id="charAmountRange"
           />
           <input
-            class="numInput"
             type="number"
             min="8"
             max="128"
@@ -34,29 +30,25 @@
             id="charAmountNum"
           />
         </div>
-
         <!-- PW criteria checkboxes -->
-        <div class="checkList">Please check what you want to include.</div>
-        <div>
-          <span><input id="lowerBox" type="checkbox" />&#160;Lower case</span>
-          <br />
-          <span><input id="upperBox" type="checkbox" />&#160;Upper case</span>
-          <br />
-          <span><input id="numBox" type="checkbox" />&#160;Numbers</span>
-          <br />
-          <span
-            ><input id="symBox" type="checkbox" />&#160;Special Characters</span
-          >
-          <br />
-        </div>
+        <label for="lowercase">Lowercase</label>
+        <input id="lowerBox" type="checkbox" />
+        <label for="uppercase">Uppercase</label>
+        <input id="lowerBox" type="checkbox" />
+        <label for="numbers">Numbers</label>
+        <input id="numBox" type="checkbox" />
+        <label for="symbols">Symbols</label>
+        <input id="symBox" type="checkbox" />
 
         <!-- PW Generate btn -->
-        <div class="card-body">
-          <button id="btnGenerate" class="btn">Generate Password</button>
-        </div>
+        <button type="submit" id="btnGenerate" class="btn">
+          Generate Password
+        </button>
 
         <!-- PW Display -->
-        <h3 class="passwordDisplay" id="passwordDisplay"></h3>
+        <div class="passwordDisplay" id="passwordDisplay">
+          <h3>password</h3>
+        </div>
       </form>
     </div>
 
