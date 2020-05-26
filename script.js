@@ -5,6 +5,7 @@ const lowerBoxEl = document.getElementById("lowerBox");
 const upperBoxEl = document.getElementById("upperBox");
 const numBoxEl = document.getElementById("numBox");
 const symBoxEl = document.getElementById("symBox");
+const passwordDisplay = document.getElementById("passwordDisplay");
 
 //Sync slider and numBox
 charAmountRange.addEventListener("input", syncCharacterAmount);
