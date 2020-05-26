@@ -1,26 +1,9 @@
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-html,
-body,
-.wrapper {
+body {
   height: 100%;
   margin: 0;
   padding: 0;
-}
-
-body {
   font-family: sans-serif;
   background-color: #f9fbfd;
-}
-
-.wrapper {
-  padding-top: 30px;
-  padding-left: 20px;
-  padding-right: 20px;
 }
 
 header {
@@ -42,20 +25,8 @@ header {
   padding: 30px 40px;
 }
 
-.card-header::after {
-  content: " ";
-  display: block;
-  width: 100%;
-  background: #e7e9eb;
-  height: 2px;
-}
-
 form {
   line-height: 25px;
-}
-
-#passwordForm { 
-  visibility: hidden; 
 }
 
 .card-body {
