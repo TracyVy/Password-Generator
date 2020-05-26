@@ -1,6 +1,11 @@
-let x = ""; // Password Length
+const charAmountRange = document.getElementById("charAmountRange");
+const charAmountNum = document.getElementById("charAmountNum");
 var newPasswordVal = "";
 var textInputLength = document.getElementById("lengthInput");
+
+//Sync slider and numBox
+charAmountRange.addEventListener("input", syncCharacterAmount);
+charAmountNum.addEventListener("input", syncCharacterAmount);
 
 // Validate password length
 function validLength(e) {
