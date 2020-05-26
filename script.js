@@ -1,22 +1,6 @@
-var x; // passwordLength
+let x = ""; // Password Length
 var newPasswordVal = "";
 var textInputLength = document.getElementById("lengthInput");
-
-textInputLength.addEventListener("keyup", validLength);
-
-// Do you want a new password?
-function yesFunction() {
-  var checkbox = document.getElementById("yesNew");
-  var text = document.getElementById("passwordForm");
-
-  if (checkbox.checked == true) {
-    //text.style.display = "block";
-    text.style.visibility = "visible";
-  } else {
-    //text.style.display = "none";
-    text.style.visibility = "hidden";
-  }
-}
 
 // Validate password length
 function validLength(e) {
@@ -56,34 +40,42 @@ var btnGenerate = document.getElementById("btnGenerate");
 btnGenerate.addEventListener("click", generateNew);
 
 function generateNew() {
+  x = textInputLength.value;
+  console.log("input length = " + x);
+
   // Validate password length
   if (x < 8 || x > 128) {
     alert("Please enter a number between 8 & 128");
     return;
   }
 
-  var lowerCheck = document.getElementById("lowerBtn");
-  var upperCheck = document.getElementById("upperBtn");
-  var numCheck = document.getElementById("numBtn");
-  var symCheck = document.getElementById("symBtn");
+  var lowerCheck = document.getElementById("lowerBox");
+  var upperCheck = document.getElementById("upperBox");
+  var numCheck = document.getElementById("numBox");
+  var symCheck = document.getElementById("symBox");
 
+  var newPasswordVal = "";
   if (lowerCheck.checked == true) {
-    var newPasswordVal = "";
-    newPasswordVal = randomLower();
+    console.log("lowerCheck.checked...");
+    //var newPasswordVal = "";
+    newPasswordVal += randomLower();
   }
 
   if (upperCheck.checked == true) {
-    var newPasswordVal = "";
+    console.log("upperCheck.checked...");
+    //var newPasswordVal = "";
     newPasswordVal += randomUpper();
   }
 
   if (numCheck.checked == true) {
-    var newPasswordVal = "";
+    console.log("numCheck.checked...");
+    //var newPasswordVal = "";
     newPasswordVal += randomNum();
   }
 
   if (symCheck.checked == true) {
-    var newPasswordVal = "";
+    console.log(symCheck);
+    //var newPasswordVal = "";
     newPasswordVal += randomSym();
   }
 
